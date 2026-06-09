@@ -1102,6 +1102,102 @@
     .skills-wrap { padding: 2rem; }
     .achievements-section { padding: 2rem; }
   }
+
+  /* HELLO KITTY MASCOT */
+  .kitty-mascot {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.6rem;
+  }
+
+  .kitty-bubble {
+    background: #fff;
+    color: #333;
+    border-radius: 18px 18px 4px 18px;
+    padding: 0.8rem 1.1rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    max-width: 180px;
+    line-height: 1.5;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    position: relative;
+    animation: bubblePop 0.4s cubic-bezier(0.34,1.56,0.64,1) both;
+    cursor: default;
+  }
+
+  .kitty-bubble.hide {
+    animation: bubbleFade 0.3s ease forwards;
+  }
+
+  @keyframes bubblePop {
+    from { opacity: 0; transform: scale(0.5) translateY(10px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+  }
+
+  @keyframes bubbleFade {
+    to { opacity: 0; transform: scale(0.8) translateY(5px); }
+  }
+
+  .kitty-btn {
+    background: linear-gradient(135deg, #ffb7c5, #ff8fab);
+    border: 3px solid #fff;
+    border-radius: 50%;
+    width: 68px; height: 68px;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(255,143,171,0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex; align-items: center; justify-content: center;
+    animation: kittyBounce 2.5s ease-in-out infinite;
+    font-size: 0; /* hide text */
+    overflow: hidden;
+    position: relative;
+  }
+
+  .kitty-btn:hover {
+    transform: scale(1.12);
+    box-shadow: 0 12px 35px rgba(255,143,171,0.7);
+    animation: none;
+  }
+
+  @keyframes kittyBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  .kitty-svg {
+    width: 52px; height: 52px;
+  }
+
+  .kitty-scroll-hint {
+    background: linear-gradient(135deg, #ff8fab, #ffb7c5);
+    color: white;
+    border: none;
+    border-radius: 100px;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 0.04em;
+    box-shadow: 0 4px 15px rgba(255,143,171,0.4);
+    transition: all 0.3s;
+    white-space: nowrap;
+  }
+
+  .kitty-scroll-hint:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255,143,171,0.6);
+  }
+
+  @media (max-width: 600px) {
+    .kitty-mascot { bottom: 1rem; right: 1rem; }
+    .kitty-btn { width: 56px; height: 56px; }
+    .kitty-svg { width: 42px; height: 42px; }
+  }
 </style>
 </head>
 <body>
@@ -1680,5 +1776,300 @@
     glow.style.top = e.clientY + 'px';
   });
 </script>
+
+<!-- MASCOT STYLES -->
+<style>
+  .mascot-wrap {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+  }
+
+  .mascot-bubble {
+    background: var(--surface);
+    border: 1px solid rgba(0,198,255,0.35);
+    border-radius: 16px 16px 4px 16px;
+    padding: 1rem 1.2rem;
+    max-width: 230px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 0 20px rgba(0,198,255,0.1);
+    animation: bubblePop 0.4s cubic-bezier(0.34,1.56,0.64,1) both;
+    transform-origin: bottom right;
+    position: relative;
+  }
+
+  .mascot-bubble.hide {
+    animation: bubbleFade 0.3s ease forwards;
+  }
+
+  @keyframes bubblePop {
+    from { opacity:0; transform: scale(0.5); }
+    to   { opacity:1; transform: scale(1); }
+  }
+
+  @keyframes bubbleFade {
+    to { opacity:0; transform: scale(0.5); }
+  }
+
+  .bubble-text {
+    font-size: 0.88rem;
+    color: var(--text);
+    line-height: 1.5;
+    min-height: 1.2em;
+  }
+
+  .bubble-text .highlight {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .bubble-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+    flex-wrap: wrap;
+  }
+
+  .bubble-btn {
+    background: rgba(0,198,255,0.1);
+    border: 1px solid rgba(0,198,255,0.3);
+    border-radius: 100px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.75rem;
+    color: var(--accent3);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'DM Sans', sans-serif;
+    white-space: nowrap;
+  }
+
+  .bubble-btn:hover {
+    background: rgba(0,198,255,0.2);
+    transform: translateY(-1px);
+  }
+
+  .bubble-close {
+    position: absolute;
+    top: 6px; right: 8px;
+    background: none;
+    border: none;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 0.75rem;
+    line-height: 1;
+    padding: 2px 4px;
+    border-radius: 4px;
+    transition: color 0.2s;
+  }
+  .bubble-close:hover { color: var(--text); }
+
+  .mascot-char {
+    width: 62px;
+    height: 62px;
+    cursor: pointer;
+    animation: mascotFloat 3s ease-in-out infinite;
+    filter: drop-shadow(0 4px 16px rgba(0,198,255,0.35));
+    transition: transform 0.2s;
+    flex-shrink: 0;
+  }
+
+  .mascot-char:hover {
+    transform: scale(1.12);
+    filter: drop-shadow(0 4px 24px rgba(0,198,255,0.55));
+    animation-play-state: paused;
+  }
+
+  .mascot-char:active { transform: scale(0.95); }
+
+  @keyframes mascotFloat {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-8px); }
+  }
+
+  .typing-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 0.85em;
+    background: var(--accent);
+    margin-left: 1px;
+    vertical-align: middle;
+    animation: blink 0.7s infinite;
+  }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+</style>
+
+<div class="mascot-wrap" id="mascotWrap">
+  <div class="mascot-bubble" id="mascotBubble">
+    <button class="bubble-close" onclick="hideBubble()" title="Close">✕</button>
+    <div class="bubble-text" id="bubbleText"></div>
+    <div class="bubble-actions" id="bubbleActions"></div>
+  </div>
+
+  <svg class="mascot-char" id="mascotChar" onclick="mascotClick()" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="40" cy="40" r="36" fill="rgba(0,198,255,0.07)" stroke="rgba(0,198,255,0.2)" stroke-width="1"/>
+    <rect x="26" y="46" width="28" height="20" rx="6" fill="#0D1F2D" stroke="#00C6FF" stroke-width="1.2"/>
+    <rect x="36" y="41" width="8" height="7" rx="2" fill="#0D1F2D" stroke="#00C6FF" stroke-width="1"/>
+    <rect x="20" y="16" width="40" height="32" rx="12" fill="#122233" stroke="#00C6FF" stroke-width="1.5"/>
+    <line x1="40" y1="16" x2="40" y2="8" stroke="#00C6FF" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="40" cy="6" r="3" fill="#00C6FF">
+      <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <ellipse cx="32" cy="28" rx="4" ry="4.5" fill="#050A0E" stroke="#00C6FF" stroke-width="1"/>
+    <ellipse cx="48" cy="28" rx="4" ry="4.5" fill="#050A0E" stroke="#00C6FF" stroke-width="1"/>
+    <circle cx="32" cy="28" r="2" fill="#00C6FF">
+      <animate attributeName="cy" values="28;29;28" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="48" cy="28" r="2" fill="#00C6FF">
+      <animate attributeName="cy" values="28;29;28" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <path d="M33 36 Q40 41 47 36" stroke="#00C6FF" stroke-width="1.5" stroke-linecap="round" fill="none" id="mascotMouth"/>
+    <rect x="17" y="22" width="5" height="10" rx="2.5" fill="#122233" stroke="#00C6FF" stroke-width="1"/>
+    <rect x="58" y="22" width="5" height="10" rx="2.5" fill="#122233" stroke="#00C6FF" stroke-width="1"/>
+    <rect x="31" y="50" width="18" height="10" rx="3" fill="#050A0E" stroke="rgba(0,198,255,0.3)" stroke-width="1"/>
+    <circle cx="36" cy="55" r="2" fill="#00C6FF" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="44" cy="55" r="2" fill="#7EE8FA" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+    </circle>
+    <rect x="14" y="48" width="13" height="6" rx="3" fill="#0D1F2D" stroke="#00C6FF" stroke-width="1"/>
+    <rect x="53" y="48" width="13" height="6" rx="3" fill="#0D1F2D" stroke="#00C6FF" stroke-width="1"/>
+  </svg>
+</div>
+
+<script>
+  const messages = [
+    {
+      text: `👋 <span class="highlight">Hello! I'm Byte</span> — Shreya's AI buddy! Welcome to her portfolio!`,
+      actions: [
+        { label: '📁 See Projects', section: 'projects' },
+        { label: '👤 About Shreya', section: 'about' }
+      ]
+    },
+    {
+      text: `✨ Shreya is a <span class="highlight">Full Stack Developer</span> & Data Engineer — open to work!`,
+      actions: [
+        { label: '💼 Experience', section: 'experience' },
+        { label: '📬 Contact Her', section: 'contact' }
+      ]
+    },
+    {
+      text: `🏆 Did you know? Shreya won <span class="highlight">2nd Prize at a National Level</span> competition & is a published researcher!`,
+      actions: [
+        { label: '🎖️ Achievements', section: 'achievements' },
+        { label: '📁 Projects', section: 'projects' }
+      ]
+    },
+    {
+      text: `☁️ Shreya is a <span class="highlight">Google Cloud Arcade 2025 Topper</span> — 125 labs completed!`,
+      actions: [
+        { label: '🛠️ Her Skills', section: 'skills' },
+        { label: '📬 Hire Her!', section: 'contact' }
+      ]
+    },
+    {
+      text: `📬 Want to <span class="highlight">collaborate or hire</span> Shreya? She's available immediately!`,
+      actions: [
+        { label: '📩 Contact Now', section: 'contact' },
+        { label: '📁 Projects', section: 'projects' }
+      ]
+    }
+  ];
+
+  let msgIndex = 0;
+  let typeTimer = null;
+  let cycleTimer = null;
+  let bubbleVisible = true;
+
+  function typeText(text, el, cb) {
+    el.innerHTML = '';
+    const temp = document.createElement('div');
+    temp.innerHTML = text;
+    const plain = temp.textContent;
+    let i = 0;
+    clearInterval(typeTimer);
+    typeTimer = setInterval(() => {
+      i++;
+      if (i <= plain.length) {
+        el.innerHTML = plain.slice(0, i) + '<span class="typing-cursor"></span>';
+      }
+      if (i >= plain.length) {
+        clearInterval(typeTimer);
+        el.innerHTML = text;
+        if (cb) cb();
+      }
+    }, 28);
+  }
+
+  function showMessage(index) {
+    const msg = messages[index % messages.length];
+    const bubble = document.getElementById('mascotBubble');
+    const textEl = document.getElementById('bubbleText');
+    const actionsEl = document.getElementById('bubbleActions');
+    bubble.classList.remove('hide');
+    bubble.style.display = '';
+    bubbleVisible = true;
+    actionsEl.innerHTML = '';
+    typeText(msg.text, textEl, () => {
+      msg.actions.forEach(a => {
+        const btn = document.createElement('button');
+        btn.className = 'bubble-btn';
+        btn.textContent = a.label;
+        btn.onclick = () => {
+          document.getElementById(a.section).scrollIntoView({ behavior: 'smooth' });
+          scheduleCycle();
+        };
+        actionsEl.appendChild(btn);
+      });
+    });
+  }
+
+  function hideBubble() {
+    const bubble = document.getElementById('mascotBubble');
+    bubble.classList.add('hide');
+    bubbleVisible = false;
+    clearTimeout(cycleTimer);
+    setTimeout(() => { bubble.style.display = 'none'; }, 300);
+  }
+
+  function showBubble() {
+    const bubble = document.getElementById('mascotBubble');
+    bubble.style.display = '';
+    bubble.classList.remove('hide');
+    bubbleVisible = true;
+  }
+
+  function scheduleCycle() {
+    clearTimeout(cycleTimer);
+    cycleTimer = setTimeout(() => {
+      msgIndex = (msgIndex + 1) % messages.length;
+      showBubble();
+      showMessage(msgIndex);
+      scheduleCycle();
+    }, 6000);
+  }
+
+  function mascotClick() {
+    const mouth = document.getElementById('mascotMouth');
+    mouth.setAttribute('d', 'M33 38 Q40 43 47 38');
+    setTimeout(() => mouth.setAttribute('d', 'M33 36 Q40 41 47 36'), 500);
+    msgIndex = (msgIndex + 1) % messages.length;
+    showBubble();
+    showMessage(msgIndex);
+    scheduleCycle();
+  }
+
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      showMessage(0);
+      scheduleCycle();
+    }, 1200);
+  });
+</script>
 </body>
 </html>
+
