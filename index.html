@@ -1451,85 +1451,95 @@
       <ul class="modal-highlights" id="mHighlights"></ul>
       <div class="modal-stack-label">Tech Stack</div>
       <div class="modal-stack" id="mStack"></div>
+      <div id="mLinks" style="display:flex;gap:0.7rem;margin-top:1.2rem;flex-wrap:wrap;"></div>
     </div>
   </div>
 
   <div class="projects-grid reveal">
 
-    <div class="project-card" onclick="openModal(4)" style="border-color: rgba(0,198,255,0.3); background: linear-gradient(135deg, rgba(0,198,255,0.05), var(--surface));">
-      <div class="project-badge" style="background: rgba(0,198,255,0.12); border-color: rgba(0,198,255,0.35); color: var(--accent3);">🤖 National Workshop Certificate</div>
-      <div class="project-title">AI & Analytics Exploration — Multimodal LLMs, RAGs & AI Agents</div>
-      <p class="project-desc">
-        Completed a national-level workshop on Multimodal LLMs, Retrieval-Augmented Generation (RAG), and AI Agents — building practical understanding of agentic automation workflows and AI-driven application architectures.
-      </p>
+    <!-- 1. Aster Row Agent — STAR project for Agentic AI -->
+    <div class="project-card" onclick="openModal(4)" style="border-color: rgba(0,198,255,0.35); background: linear-gradient(135deg, rgba(0,198,255,0.06), var(--surface));">
+      <div class="project-badge" style="background:rgba(0,198,255,0.12);border-color:rgba(0,198,255,0.35);color:var(--accent3);">🤖 Agentic AI · RAG · LLM</div>
+      <div class="project-title">Aster & Row Support Agent</div>
+      <p class="project-desc">RAG-based customer support AI agent — retrieval over policy docs, order-status tool use, multi-turn conversations, and a full deterministic evaluation suite. 21/21 evaluation cases passed.</p>
       <div class="project-stack">
-        <span class="tech-tag">LLM Concepts</span>
-        <span class="tech-tag">RAG Architecture</span>
-        <span class="tech-tag">AI Agents</span>
-        <span class="tech-tag">Python</span>
+        <span class="tech-tag">Python</span><span class="tech-tag">RAG</span><span class="tech-tag">AI Agents</span><span class="tech-tag">Claude API</span><span class="tech-tag">BM25</span><span class="tech-tag">Tool Use</span>
       </div>
-      <button class="view-btn">View Details →</button>
+      <div style="display:flex;gap:0.6rem;margin-top:0.8rem;align-items:center;">
+        <button class="view-btn">View Details →</button>
+        <a href="https://github.com/shreya-User/aster-row-agent" target="_blank" style="font-size:0.78rem;color:var(--muted);text-decoration:none;border:1px solid var(--border);border-radius:6px;padding:0.25rem 0.6rem;transition:all 0.2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'">GitHub ↗</a>
+      </div>
     </div>
 
+    <!-- 2. Find Your Worker -->
     <div class="project-card" onclick="openModal(0)">
       <div class="project-badge award">🏆 2nd Prize — National Level</div>
-      <div class="project-title">Find Your Worker — Intelligent Service Marketplace</div>
-      <p class="project-desc">
-        Full-stack service marketplace with modular backend, user auth, and service-discovery logic. Designed MySQL schemas and reduced booking-flow errors by ~30%.
-      </p>
+      <div class="project-title">Find Your Worker — Service Marketplace</div>
+      <p class="project-desc">Full-stack Django platform connecting customers with local service workers — booking, real-time chat, admin approval, Razorpay payments, and subscriptions. Published in IJRTI 2026.</p>
       <div class="project-stack">
-        <span class="tech-tag">Python</span>
-        <span class="tech-tag">Flask</span>
-        <span class="tech-tag">MySQL</span>
-        <span class="tech-tag">REST APIs</span>
-        <span class="tech-tag">Bootstrap</span>
+        <span class="tech-tag">Python</span><span class="tech-tag">Django</span><span class="tech-tag">SQLite</span><span class="tech-tag">REST APIs</span><span class="tech-tag">Razorpay</span><span class="tech-tag">Firebase</span>
       </div>
-      <button class="view-btn">View Details →</button>
+      <div style="display:flex;gap:0.6rem;margin-top:0.8rem;align-items:center;">
+        <button class="view-btn">View Details →</button>
+        <a href="https://github.com/shreya-User/find-your-worker-platform" target="_blank" style="font-size:0.78rem;color:var(--muted);text-decoration:none;border:1px solid var(--border);border-radius:6px;padding:0.25rem 0.6rem;transition:all 0.2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'">GitHub ↗</a>
+      </div>
     </div>
 
-    <div class="project-card" onclick="openModal(1)">
-      <div class="project-badge">IoT · Real-Time</div>
-      <div class="project-title">Smart Parking System</div>
-      <p class="project-desc">
-        Integrated IoT sensor data with Firebase powering a real-time Android app. Achieved sub-2s data refresh via optimised event listeners.
-      </p>
-      <div class="project-stack">
-        <span class="tech-tag">Android</span>
-        <span class="tech-tag">Java</span>
-        <span class="tech-tag">IoT Sensors</span>
-        <span class="tech-tag">Firebase</span>
-      </div>
-      <button class="view-btn">View Details →</button>
-    </div>
-
-    <div class="project-card" onclick="openModal(2)">
-      <div class="project-badge">Data Engineering</div>
-      <div class="project-title">Energy Consumption Monitoring System</div>
-      <p class="project-desc">
-        Real-time data ingestion pipeline with live API integration, anomaly detection, and automated visual dashboards.
-      </p>
-      <div class="project-stack">
-        <span class="tech-tag">Python</span>
-        <span class="tech-tag">REST APIs</span>
-        <span class="tech-tag">Real-Time Processing</span>
-      </div>
-      <button class="view-btn">View Details →</button>
-    </div>
-
+    <!-- 3. Student Performance Analysis -->
     <div class="project-card" onclick="openModal(3)">
-      <div class="project-badge">Data Analytics</div>
+      <div class="project-badge">Data Analytics · ML</div>
       <div class="project-title">Student Performance Analysis</div>
-      <p class="project-desc">
-        End-to-end EDA pipeline — ingestion, cleaning, transformation, and visual reporting with correlation heatmaps.
-      </p>
+      <p class="project-desc">EDA pipeline + Streamlit dashboard with Ridge regression ML model predicting student scores. Covers ingestion, cleaning, transformation, correlation heatmaps and grade-distribution charts.</p>
       <div class="project-stack">
-        <span class="tech-tag">Python</span>
-        <span class="tech-tag">Pandas</span>
-        <span class="tech-tag">NumPy</span>
-        <span class="tech-tag">Matplotlib</span>
-        <span class="tech-tag">Jupyter</span>
+        <span class="tech-tag">Python</span><span class="tech-tag">Pandas</span><span class="tech-tag">scikit-learn</span><span class="tech-tag">Streamlit</span><span class="tech-tag">Plotly</span><span class="tech-tag">Jupyter</span>
       </div>
-      <button class="view-btn">View Details →</button>
+      <div style="display:flex;gap:0.6rem;margin-top:0.8rem;align-items:center;">
+        <button class="view-btn">View Details →</button>
+        <a href="https://github.com/shreya-User/student-performance-analysis" target="_blank" style="font-size:0.78rem;color:var(--muted);text-decoration:none;border:1px solid var(--border);border-radius:6px;padding:0.25rem 0.6rem;transition:all 0.2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'">GitHub ↗</a>
+      </div>
+    </div>
+
+    <!-- 4. Campus Energy Seer -->
+    <div class="project-card" onclick="openModal(2)">
+      <div class="project-badge">React · TypeScript · Dashboard</div>
+      <div class="project-title">Campus Energy Seer</div>
+      <p class="project-desc">React + TypeScript dashboard for monitoring and forecasting campus building energy consumption — interactive charts, energy-saving recommendations, and a component-based modern UI. Live on Vercel.</p>
+      <div class="project-stack">
+        <span class="tech-tag">React 18</span><span class="tech-tag">TypeScript</span><span class="tech-tag">Recharts</span><span class="tech-tag">Tailwind CSS</span><span class="tech-tag">Vite</span><span class="tech-tag">shadcn/ui</span>
+      </div>
+      <div style="display:flex;gap:0.6rem;margin-top:0.8rem;align-items:center;">
+        <button class="view-btn">View Details →</button>
+        <a href="https://github.com/shreya-User/campus-energy-seer" target="_blank" style="font-size:0.78rem;color:var(--muted);text-decoration:none;border:1px solid var(--border);border-radius:6px;padding:0.25rem 0.6rem;transition:all 0.2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'">GitHub ↗</a>
+        <a href="https://campus-energy-seer-92.vercel.app" target="_blank" style="font-size:0.78rem;color:var(--accent);text-decoration:none;border:1px solid rgba(0,198,255,0.3);border-radius:6px;padding:0.25rem 0.6rem;transition:all 0.2s;">Live ↗</a>
+      </div>
+    </div>
+
+    <!-- 5. Smart Parking System -->
+    <div class="project-card" onclick="openModal(1)">
+      <div class="project-badge">Android · IoT · Firebase</div>
+      <div class="project-title">ParkKro — Smart Parking System</div>
+      <p class="project-desc">Android app for booking parking slots with OTP login via Firebase, Razorpay payments, real-time slot availability, and EV charging / car wash add-ons. Sub-2s data refresh via optimised listeners.</p>
+      <div class="project-stack">
+        <span class="tech-tag">Java</span><span class="tech-tag">Android</span><span class="tech-tag">Firebase</span><span class="tech-tag">Razorpay</span><span class="tech-tag">OTP Auth</span>
+      </div>
+      <div style="display:flex;gap:0.6rem;margin-top:0.8rem;align-items:center;">
+        <button class="view-btn">View Details →</button>
+        <a href="https://github.com/shreya-User/smart-parking-system" target="_blank" style="font-size:0.78rem;color:var(--muted);text-decoration:none;border:1px solid var(--border);border-radius:6px;padding:0.25rem 0.6rem;transition:all 0.2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'">GitHub ↗</a>
+      </div>
+    </div>
+
+    <!-- 6. Hotel Management -->
+    <div class="project-card" onclick="openModal(5)">
+      <div class="project-badge">Android · Firebase</div>
+      <div class="project-title">Hotel Management App</div>
+      <p class="project-desc">Android app for hotel room booking with OTP phone login, room type selection with image flipper, booking forms, Aadhaar verification, push notifications, and a Firebase-backed admin dashboard.</p>
+      <div class="project-stack">
+        <span class="tech-tag">Java</span><span class="tech-tag">Android</span><span class="tech-tag">Firebase</span><span class="tech-tag">FCM</span><span class="tech-tag">RecyclerView</span>
+      </div>
+      <div style="display:flex;gap:0.6rem;margin-top:0.8rem;align-items:center;">
+        <button class="view-btn">View Details →</button>
+        <a href="https://github.com/shreya-User/Hotel-Management" target="_blank" style="font-size:0.78rem;color:var(--muted);text-decoration:none;border:1px solid var(--border);border-radius:6px;padding:0.25rem 0.6rem;transition:all 0.2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'">GitHub ↗</a>
+      </div>
     </div>
 
   </div>
@@ -1710,73 +1720,103 @@
     {
       badge: '🏆 2nd Prize — National Level',
       badgeClass: 'project-badge award',
-      title: 'Find Your Worker — Intelligent Service Marketplace',
-      desc: 'A full-stack intelligent service marketplace that connects users with skilled workers. Built with a modular backend, complete user authentication, and smart service-discovery logic following clean REST principles and separation of concerns.',
+      title: 'Find Your Worker — Service Marketplace',
+      desc: 'Full-stack Django platform connecting customers with local service workers — booking, real-time chat, admin approval, Razorpay payments, and subscriptions. Published in IJRTI 2026.',
       highlights: [
-        'Architected full-stack platform with modular Flask backend and RESTful API design',
-        'Designed optimised MySQL schemas, reducing booking-flow errors by ~30%',
-        'Implemented user auth, service discovery, and dynamic pricing algorithms',
+        'Full-stack Django platform with modular backend and REST API design',
+        'Real-time chat between customers and workers post-booking',
+        'Razorpay payment integration with subscription plans and loyalty rewards',
+        'Admin approval dashboard for managing workers and bookings',
+        'Voice assistant integration (voice_assistant.py + voice_routes.py)',
+        'Reduced booking-flow errors by ~30% through structured testing',
         'Won 2nd Prize at National Level Project Competition',
-        'Research published in IJRTI Journal, Vol. 11, Issue 4, April 2026',
-        'Integrated geospatial algorithms for location-aware service matching'
+        'Published in IJRTI Journal, Vol. 11, Issue 4, April 2026'
       ],
-      stack: ['Python', 'Flask', 'MySQL', 'REST APIs', 'HTML', 'CSS', 'Bootstrap', 'JavaScript']
+      stack: ['Python', 'Django', 'SQLite', 'REST APIs', 'HTML', 'CSS', 'Bootstrap', 'JavaScript', 'Razorpay'],
+      github: 'https://github.com/shreya-User/find-your-worker-platform'
     },
     {
-      badge: 'IoT · Real-Time',
+      badge: 'Android · IoT · Firebase',
       badgeClass: 'project-badge',
-      title: 'Smart Parking System',
-      desc: 'A real-time smart parking solution that integrates IoT sensor data with a Firebase backend, powering a live Android mobile app that shows parking slot availability instantly.',
+      title: 'ParkKro — Smart Parking System',
+      desc: 'Android app for booking parking slots with Firebase OTP login, Razorpay payments, real-time slot map, and EV charging or car wash add-ons.',
       highlights: [
-        'Integrated IoT sensor hardware with Firebase Realtime Database',
-        'Built Android app (Java) displaying live slot status with sub-2s refresh rate',
-        'Optimised Firebase event listeners for minimal latency data sync',
-        'Systematically debugged sensor-data mismatch issues across the IoT–mobile pipeline',
-        'Designed clean UI for real-time slot availability visualization'
+        'Firebase Phone Authentication for secure OTP-based login',
+        'Real-time slot map with Firebase Realtime Database — sub-2s refresh',
+        'Razorpay payment integration for slot booking',
+        'EV charging (Ola, Ather) and car wash add-on services',
+        'Local session memory across app restarts via file storage',
+        'Debugged IoT sensor-data mismatch issues across the mobile pipeline'
       ],
-      stack: ['Android', 'Java', 'IoT Sensors', 'Firebase Realtime Database']
+      stack: ['Java', 'Android', 'Firebase Realtime DB', 'Firebase Phone Auth', 'Razorpay SDK', 'Material Components'],
+      github: 'https://github.com/shreya-User/smart-parking-system'
     },
     {
-      badge: 'Data Engineering',
+      badge: 'React · TypeScript · Dashboard',
       badgeClass: 'project-badge',
-      title: 'Energy Consumption Monitoring System',
-      desc: 'A real-time energy monitoring system that ingests live data via APIs, detects anomalies automatically, and renders automated visual dashboards — drastically reducing the need for manual monitoring.',
+      title: 'Campus Energy Seer',
+      desc: 'React + TypeScript dashboard for monitoring and forecasting campus energy consumption — interactive charts, per-building efficiency ratings, and energy-saving recommendations. Live on Vercel.',
       highlights: [
-        'Built real-time data ingestion pipeline with live REST API integration',
-        'Implemented anomaly detection to flag abnormal consumption patterns',
-        'Automated visual dashboard generation, reducing manual effort significantly',
-        'Designed scalable pipeline architecture for continuous data processing',
-        'Enabled real-time alerting on consumption thresholds'
+        'React 18 + TypeScript + Vite — modern component-based architecture',
+        'Interactive consumption charts with historical + forecast views (Recharts)',
+        'Per-building efficiency ratings and energy metric summary cards',
+        'Energy-saving recommendations panel per building',
+        'shadcn/ui + Tailwind CSS for polished responsive UI',
+        'Live deployment: campus-energy-seer-92.vercel.app'
       ],
-      stack: ['Python', 'REST APIs', 'Real-Time Processing', 'Data Visualization']
+      stack: ['React 18', 'TypeScript', 'Vite', 'Recharts', 'Tailwind CSS', 'shadcn/ui', 'TanStack Query'],
+      github: 'https://github.com/shreya-User/campus-energy-seer',
+      live: 'https://campus-energy-seer-92.vercel.app'
     },
     {
-      badge: 'Data Analytics',
+      badge: 'Data Analytics · ML',
       badgeClass: 'project-badge',
       title: 'Student Performance Analysis',
-      desc: 'An end-to-end exploratory data analysis (EDA) project that processes student academic data through a complete pipeline — from raw ingestion to cleaned, transformed, and visually reported insights.',
+      desc: 'EDA pipeline + Streamlit dashboard with Ridge regression ML model predicting student scores. Covers ingestion, cleaning, transformation, correlation heatmaps and grade-distribution charts.',
       highlights: [
-        'Built complete EDA pipeline: ingestion → cleaning → transformation → reporting',
-        'Generated correlation heatmaps revealing key performance factors',
-        'Created grade-distribution charts to surface academic trends',
-        'Applied statistical analysis to identify at-risk student patterns',
-        'Used Jupyter Notebook for reproducible, well-documented analysis'
+        'Complete EDA pipeline: ingestion → cleaning → transformation → reporting',
+        'Ridge regression ML model with scikit-learn pipelines, one-hot encoding, and scaling',
+        'Interactive Streamlit dashboard with Plotly charts',
+        'Students banded into 4 performance tiers with score contribution estimates',
+        'Correlation heatmaps and grade-distribution charts',
+        'Auto-generates realistic demo data when no CSV is uploaded'
       ],
-      stack: ['Python', 'Pandas', 'NumPy', 'Matplotlib', 'Jupyter Notebook', 'Statistical Analysis']
+      stack: ['Python', 'Pandas', 'NumPy', 'scikit-learn', 'Streamlit', 'Plotly', 'Jupyter'],
+      github: 'https://github.com/shreya-User/student-performance-analysis'
     },
     {
-      badge: '🤖 National Workshop Certificate',
+      badge: '🤖 Agentic AI · RAG · LLM',
       badgeClass: 'project-badge',
-      title: 'AI & Analytics Exploration — Multimodal LLMs, RAGs & AI Agents',
-      desc: 'A national-level workshop conducted by the Department of CSE (Data Science), focused on the latest in Generative AI — covering Multimodal LLMs, Retrieval-Augmented Generation (RAG), and AI Agent architectures.',
+      title: 'Aster & Row Support Agent',
+      desc: 'RAG + tool-use AI support agent built with Python and Claude API. Features BM25-lite retrieval over policy docs, structured order-status tool calls, multi-turn memory, privacy guardrails, and a full deterministic eval suite — 21/21 cases passed.',
       highlights: [
-        'Completed a national-level workshop certificate on Multimodal LLMs, RAG, and AI Agents',
-        'Gained practical understanding of LLM-based automation workflows',
-        'Studied agent architectures and AI-driven application development concepts',
-        'Connected RAG and agentic concepts to real-world automation pipelines (e.g. autonomous monitoring agents in Energy Consumption project)',
-        'Strong foundation for working on Agentic AI, LLM integration, and HyperAutomation projects'
+        'RAG architecture: BM25-lite retrieval over 14 markdown knowledge-base docs with metadata scoring',
+        'Native tool use (order_lookup) via Claude API — model never sees raw data directly',
+        'Multi-turn conversation memory with session-scoped last_order_id tracking',
+        'Privacy guardrails: customer/internal fields stripped before every tool result',
+        'Prompt injection detection + PII refusal with automatic handoff escalation',
+        'Deterministic eval suite: 21/21 cases passed across 10 categories',
+        'Two backends: AnthropicBackend (live) + MockBackend (zero-cost CI)',
+        'Full structured JSON observability logging per turn'
       ],
-      stack: ['LLM Concepts', 'RAG Architecture', 'AI Agents', 'Prompt Engineering', 'Python']
+      stack: ['Python', 'Claude API', 'RAG', 'BM25', 'AI Agents', 'Tool Use', 'pytest'],
+      github: 'https://github.com/shreya-User/aster-row-agent'
+    },
+    {
+      badge: 'Android · Firebase',
+      badgeClass: 'project-badge',
+      title: 'Hotel Management App',
+      desc: 'Android app for hotel room booking with Firebase OTP phone login, room type selection with image flipper, booking forms with Aadhaar verification, push notifications, and a live Firebase admin dashboard.',
+      highlights: [
+        'Firebase Phone Authentication with OTP for secure guest login',
+        'Swipeable ViewFlipper image gallery for room types (Luxury Deluxe, Super Deluxe, AC, Non-AC)',
+        'Booking form with dates, guests, Aadhaar details, and promo code support',
+        'Firebase Cloud Messaging (FCM) push notifications for booking updates',
+        'Admin dashboard with RecyclerView listing all live guest bookings',
+        'Local session persistence via SharedPreferences across app restarts'
+      ],
+      stack: ['Java', 'Android', 'Firebase Realtime DB', 'Firebase Phone Auth', 'FCM', 'RecyclerView'],
+      github: 'https://github.com/shreya-User/Hotel-Management'
     }
   ];
 
@@ -1787,6 +1827,14 @@
     document.getElementById('mDesc').textContent = p.desc;
     document.getElementById('mHighlights').innerHTML = p.highlights.map(h => `<li>${h}</li>`).join('');
     document.getElementById('mStack').innerHTML = p.stack.map(s => `<span class="tech-tag" style="font-size:0.82rem; padding:0.3rem 0.7rem;">${s}</span>`).join('');
+    const linksEl = document.getElementById('mLinks');
+    linksEl.innerHTML = '';
+    if (p.github) {
+      linksEl.innerHTML += `<a href="${p.github}" target="_blank" class="btn-secondary" style="font-size:0.83rem;padding:0.5rem 1.2rem;">🐙 View on GitHub</a>`;
+    }
+    if (p.live) {
+      linksEl.innerHTML += `<a href="${p.live}" target="_blank" class="btn-primary" style="font-size:0.83rem;padding:0.5rem 1.2rem;">🌐 Live Demo</a>`;
+    }
     document.getElementById('projectModal').classList.add('open');
     document.body.style.overflow = 'hidden';
   }
@@ -1943,6 +1991,22 @@
     animation: blink 0.7s infinite;
   }
   @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+  .mute-btn {
+    position: absolute;
+    top: -10px; left: -10px;
+    width: 26px; height: 26px;
+    background: var(--surface);
+    border: 1px solid rgba(0,198,255,0.3);
+    border-radius: 50%;
+    font-size: 0.72rem;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s;
+    z-index: 2;
+  }
+  .mute-btn:hover { background: rgba(0,198,255,0.15); }
+  .mascot-char-wrap { position: relative; display: inline-block; }
 </style>
 
 <div class="mascot-wrap" id="mascotWrap">
@@ -1952,7 +2016,9 @@
     <div class="bubble-actions" id="bubbleActions"></div>
   </div>
 
-  <svg class="mascot-char" id="mascotChar" onclick="mascotClick()" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <div class="mascot-char-wrap">
+    <button class="mute-btn" id="muteBtn" onclick="toggleMute()" title="Mute Byte">🔊</button>
+    <svg class="mascot-char" id="mascotChar" onclick="mascotClick()" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
     <circle cx="40" cy="40" r="36" fill="rgba(0,198,255,0.07)" stroke="rgba(0,198,255,0.2)" stroke-width="1"/>
     <rect x="26" y="46" width="28" height="20" rx="6" fill="#0D1F2D" stroke="#00C6FF" stroke-width="1.2"/>
     <rect x="36" y="41" width="8" height="7" rx="2" fill="#0D1F2D" stroke="#00C6FF" stroke-width="1"/>
@@ -1982,12 +2048,14 @@
     <rect x="14" y="48" width="13" height="6" rx="3" fill="#0D1F2D" stroke="#00C6FF" stroke-width="1"/>
     <rect x="53" y="48" width="13" height="6" rx="3" fill="#0D1F2D" stroke="#00C6FF" stroke-width="1"/>
   </svg>
+  </div>
 </div>
 
 <script>
   const messages = [
     {
       text: `👋 <span class="highlight">Hello! I'm Byte</span> — Shreya's AI buddy! Welcome to her portfolio!`,
+      speech: `Hello! I'm Byte, Shreya's AI buddy! Welcome to her amazing portfolio!`,
       actions: [
         { label: '📁 See Projects', section: 'projects' },
         { label: '👤 About Shreya', section: 'about' }
@@ -1995,6 +2063,7 @@
     },
     {
       text: `🤖 Shreya has hands-on exposure to <span class="highlight">Agentic AI, LLMs & RAG</span> — check her latest project!`,
+      speech: `Shreya has hands-on exposure to Agentic AI, Large Language Models, and RAG — check out her latest project!`,
       actions: [
         { label: '🤖 Agentic AI Project', section: 'projects' },
         { label: '🛠️ Skills', section: 'skills' }
@@ -2002,6 +2071,7 @@
     },
     {
       text: `✨ Shreya is a <span class="highlight">Full Stack Developer</span> & Data Engineer — open to work!`,
+      speech: `Hi there! I'm Shreya Singh — a Full Stack Developer and Data Engineer, and I'm open to work right now!`,
       actions: [
         { label: '💼 Experience', section: 'experience' },
         { label: '📬 Contact Her', section: 'contact' }
@@ -2009,6 +2079,7 @@
     },
     {
       text: `🏆 Did you know? Shreya won <span class="highlight">2nd Prize at a National Level</span> competition & is a published researcher!`,
+      speech: `Did you know? Shreya won Second Prize at a National Level project competition, and she's also a published researcher in the IJRTI journal!`,
       actions: [
         { label: '🎖️ Achievements', section: 'achievements' },
         { label: '📁 Projects', section: 'projects' }
@@ -2016,6 +2087,7 @@
     },
     {
       text: `☁️ Shreya is a <span class="highlight">Google Cloud Arcade 2025 Topper</span> — 125 labs completed!`,
+      speech: `Shreya is a Google Cloud Arcade 2025 Topper — she completed 125 labs and 55 quizzes. That's dedication!`,
       actions: [
         { label: '🛠️ Her Skills', section: 'skills' },
         { label: '📬 Hire Her!', section: 'contact' }
@@ -2023,6 +2095,7 @@
     },
     {
       text: `📬 Want to <span class="highlight">collaborate or hire</span> Shreya? She's available immediately!`,
+      speech: `Want to collaborate or hire Shreya? She's based in Thane, Maharashtra, and is available to join immediately. Feel free to reach out!`,
       actions: [
         { label: '📩 Contact Now', section: 'contact' },
         { label: '📁 Projects', section: 'projects' }
@@ -2034,6 +2107,29 @@
   let typeTimer = null;
   let cycleTimer = null;
   let bubbleVisible = true;
+  let isMuted = false;
+
+  // ── SPEAK ──
+  function speak(text) {
+    if (isMuted) return;
+    window.speechSynthesis.cancel();
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.rate = 0.95;
+    utter.pitch = 1.1;
+    utter.volume = 1;
+
+    // Try to pick a nice female voice
+    const voices = window.speechSynthesis.getVoices();
+    const preferred = voices.find(v =>
+      /Samantha|Google US English|Zira|Karen|Moira|Tessa|female|woman/i.test(v.name)
+    ) || voices.find(v => v.lang === 'en-US') || voices[0];
+    if (preferred) utter.voice = preferred;
+
+    window.speechSynthesis.speak(utter);
+  }
+
+  // Voices load async on some browsers
+  window.speechSynthesis.onvoiceschanged = () => {};
 
   function typeText(text, el, cb) {
     el.innerHTML = '';
@@ -2064,6 +2160,10 @@
     bubble.style.display = '';
     bubbleVisible = true;
     actionsEl.innerHTML = '';
+
+    // Speak first, then type
+    speak(msg.speech);
+
     typeText(msg.text, textEl, () => {
       msg.actions.forEach(a => {
         const btn = document.createElement('button');
@@ -2083,6 +2183,7 @@
     bubble.classList.add('hide');
     bubbleVisible = false;
     clearTimeout(cycleTimer);
+    window.speechSynthesis.cancel();
     setTimeout(() => { bubble.style.display = 'none'; }, 300);
   }
 
@@ -2100,7 +2201,7 @@
       showBubble();
       showMessage(msgIndex);
       scheduleCycle();
-    }, 6000);
+    }, 7000);
   }
 
   function mascotClick() {
@@ -2111,6 +2212,14 @@
     showBubble();
     showMessage(msgIndex);
     scheduleCycle();
+  }
+
+  function toggleMute() {
+    isMuted = !isMuted;
+    window.speechSynthesis.cancel();
+    const btn = document.getElementById('muteBtn');
+    btn.textContent = isMuted ? '🔇' : '🔊';
+    btn.title = isMuted ? 'Unmute Byte' : 'Mute Byte';
   }
 
   window.addEventListener('load', () => {
